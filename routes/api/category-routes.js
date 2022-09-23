@@ -86,7 +86,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// Deletes a row from the category table
+// Deletes a row from the category
 router.delete("/:id", async (req, res) => {
   try {
     const categoryData = await Category.destroy({
@@ -103,7 +103,7 @@ router.delete("/:id", async (req, res) => {
     res.status(200).json(categoryData);
   } catch (err) {
     res.status(500).json(err);
-  }
+  };
 });
 
 module.exports = router;
