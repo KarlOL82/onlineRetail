@@ -2,6 +2,7 @@ const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection");
 
+// Establishes and initializes this model
 class ProductTag extends Model {}
 
 ProductTag.init(
@@ -36,4 +37,5 @@ ProductTag.init(
   }
 );
 
+// Exports this model
 module.exports = ProductTag;

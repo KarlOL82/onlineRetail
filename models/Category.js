@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
 class Category extends Model {}
-
+// Initializes the Category model
 Category.init(
   {
     id: {
@@ -29,5 +29,5 @@ Category.init(
     modelName: 'category',
   }
 );
-
+// exports this model
 module.exports = Category;

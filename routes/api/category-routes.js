@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const { Category, Product } = require("../../models");
 
-// The `/api/categories` endpoint
 
+// Fetches all rows from the Category table
 router.get("/", async (req, res) => {
   try {
     const categoryData = await Category.findAll({
@@ -25,6 +25,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// finds a single row from the Category table by its unique id
 router.get("/:id", async (req, res) => {
   try {
     const categoryData = await Category.findByPk(req.params.id, {
@@ -47,6 +48,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+// creates a new row in the category table
 router.post("/", async (req, res) => {
   try {
     const categoryData = await Category.create({
@@ -58,6 +60,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+// updates an existing row in the category table
 router.put("/:id", async (req, res) => {
   try {
     const updated = await Category.update(
@@ -83,6 +86,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+// Deletes a row from the category table
 router.delete("/:id", async (req, res) => {
   try {
     const categoryData = await Category.destroy({
